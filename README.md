@@ -1,17 +1,36 @@
-Tidy
+# Tidy
 
-**Tidy makes files tidy.**
+Tidy is a small, local-first file compressor and converter.
 
-A small, local-first file utility for:
+## What Tidy does
 
-* Compressing files
-* Converting files
-* Previewing results before downloading
+- Compress supported files
+- Convert supported files
+- Preview results before downloading
+- Process supported files locally in the browser whenever technically possible
 
-Your files stay on your device. No account, no sign-in, and no unnecessary uploads.
+## Branding
 
-### License
+The product name is **Tidy**.
 
-Source available under the **PolyForm Strict License 1.0.0**.
+The browser title must remain:
 
-See [`LICENSE`](./LICENSE).
+`Tidy`
+
+Do not replace the title with a description, slogan, generated text, or another project name.
+
+Tidy uses two mascots:
+- **Tidy** — the broom used in light mode
+- **Moppy** — the mop used in dark mode
+
+Keep the existing visual identity unless a future Tidy update explicitly changes it.
+
+## Source
+
+This repository contains the public source for Tidy.
+
+The project may be AI-assisted, but the source is reviewed and maintained by the Tidy Team.
+
+## License
+
+See `LICENSE`.

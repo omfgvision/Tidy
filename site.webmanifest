@@ -1,0 +1,23 @@
+{
+  "name": "Tidy",
+  "short_name": "Tidy",
+  "description": "Tidy is a privacy-focused, local-first file compressor and converter that processes files on your device in the browser whenever technically possible.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f4ee",
+  "theme_color": "#f7f4ee",
+  "icons": [
+    {
+      "src": "/Icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/Icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

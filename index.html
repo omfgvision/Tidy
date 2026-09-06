@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Tidy branding: keep the page title exactly "Tidy". -->
+<title>Tidy</title>
+
+<!-- Apply the saved colour mode before first paint, so returning dark-mode
+     visitors never see a flash of the light theme while assets/app.js loads. -->
+<script>
+(function(){
+  try{
+    if(localStorage.getItem('tidy-theme') === 'dark'){
+      document.documentElement.dataset.theme = 'dark';
+    }
+  }catch(e){}
+})();
+</script>
+
+<meta name="description" content="Tidy is a privacy-focused, local-first file compressor and converter. It processes files on your device in the browser whenever technically possible, instead of uploading them to a server.">
+<link rel="canonical" href="https://tidy.cold.monster/">
+
+<!-- Site identity -->
+<meta name="application-name" content="Tidy">
+<meta name="apple-mobile-web-app-title" content="Tidy">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tidy.cold.monster/">
+<meta property="og:site_name" content="Tidy">
+<meta property="og:title" content="Tidy - local-first file compressor &amp; converter">
+<meta property="og:description" content="A privacy-focused, local-first file compressor and converter. Processes files on your device in the browser whenever technically possible, instead of uploading them to a server.">
+<!-- Wide preview image (used by most link-preview surfaces) -->
+<meta property="og:image" content="https://tidy.cold.monster/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Tidy">
+<!-- Square fallback (some link-preview and profile-card surfaces prefer a square image) -->
+<meta property="og:image" content="https://tidy.cold.monster/Icons/icon-512.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
+<meta property="og:image:alt" content="Tidy">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tidy - local-first file compressor &amp; converter">
+<meta name="twitter:description" content="A privacy-focused, local-first file compressor and converter. Processes files on your device in the browser whenever technically possible, instead of uploading them to a server.">
+<meta name="twitter:image" content="https://tidy.cold.monster/og-image.png">
+
+<!-- Favicons & app icons - all organised under /Icons. A copy of favicon.ico
+     is also kept at the site root, since some browsers and crawlers request
+     /favicon.ico directly and ignore <link> declarations entirely. -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="/Icons/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/Icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/Icons/favicon-48x48.png">
+<link rel="icon" type="image/svg+xml" href="/Icons/favicon.svg">
+<link rel="mask-icon" href="/Icons/mask-icon.svg" color="#1b1a17">
+
+<link rel="apple-touch-icon" href="/Icons/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/Icons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/Icons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="167x167" href="/Icons/apple-touch-icon-167x167.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/Icons/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#f7f4ee">
+
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+
+<main>
+  <header>
+    <div class="brand">
+      <span>tidy</span>
+    </div>
+    <div class="header-right">
+      <button type="button" class="updates-btn" id="updatesBtn">Updates</button>
+      <span class="rate-hint" id="updatesHint" role="status" aria-live="polite"></span>
+      <button type="button" class="build-link top-build" id="buildBtn" aria-label="Show build information">Build</button>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch colour mode"></button>
+    </div>
+  </header>
+
+  <h1>Choose a file.</h1>
+  <p class="lead">Make it smaller, or change its format.</p>
+  <p class="privacy-line">Processed locally by default. <button type="button" class="local-link" id="localLink">What does local mean?</button></p>
+
+  <div class="drop" id="drop" tabindex="0" role="button" aria-label="Choose a file">
+    <div class="inside">
+      <div id="heroMascot" aria-hidden="true">
+        <!-- Tidy's broom (light mode default). app.js swaps this for Moppy the
+             mop whenever dark mode is active, and restores it on switch-back. -->
+        <svg class="mascot" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M64 8 L54 62" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+          <path d="M54 62 C50 58 34 58 30 66 C41 64 47 68 49 74 C52 68 58 66 66 68 C72 70 76 66 84 68 C78 60 68 58 62 62 C58 65 57 60 54 62Z" fill="currentColor"/>
+          <g transform="translate(0,4)">
+            <path d="M22 74 C18 96 26 108 40 112 C60 118 78 110 84 96 C88 86 82 78 70 78 C50 74 32 66 22 74Z" fill="currentColor" opacity=".12" stroke="currentColor" stroke-width="6"/>
+            <path d="M30 92 L28 108 M42 96 L41 112 M55 97 L56 113 M68 94 L71 109" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+          </g>
+          <circle cx="52" cy="80" r="3.6" fill="currentColor"/>
+          <circle cx="66" cy="79" r="3.6" fill="currentColor"/>
+          <path d="M55 89 Q60 93 65 89" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <strong data-name>Choose a file</strong>
+      <div class="sub">or drop it here</div>
+      <button type="button" id="chooseBtn">Choose file</button>
+    </div>
+    <input type="file" id="fileInput">
+  </div>
+
+  <div class="pending-banner" id="pendingBanner" style="display:none">
+    <span>Still deciding on <b data-pending-name></b>?</span>
+    <span class="pending-actions">
+      <button type="button" class="ghost" id="resumePending">Continue</button>
+      <button type="button" class="link" id="discardPending">Discard</button>
+    </span>
+  </div>
+
+  <div class="queue" id="queue" style="display:none"></div>
+
+  <footer></footer>
+</main>
+
+<a class="credit" href="#" onclick="return false">made with love + AI</a>
+<a class="source-link" href="https://github.com/omfgvision/Tidy" target="_blank" rel="noopener">Review the source code</a>
+
+<!-- BUILD INFO -->
+<div class="build-toast" id="buildToast" role="status" aria-live="polite" aria-hidden="true">This is Tidy build 1.0.1.</div>
+
+<!-- COMPLETION NOTIFICATION -->
+<div class="completion-toast" id="completionToast" role="status" aria-live="polite"></div>
+
+<!-- ACTION SHEET -->
+<div class="overlay" id="overlay">
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true"></div>
+</div>
+
+<!-- CONFIRM MODAL (theme-aware, replaces native confirm dialogs) -->
+<div class="confirm-overlay" id="confirmOverlay">
+  <div class="confirm-box" id="confirmBox" role="alertdialog" aria-modal="true">
+    <p id="confirmMessage"></p>
+    <div class="actions">
+      <button class="ghost" id="confirmCancel">Cancel</button>
+      <button class="red" id="confirmOk">Confirm</button>
+    </div>
+  </div>
+</div>
+
+<!-- UPDATES PANEL -->
+<div class="panel-overlay" id="panelOverlay"></div>
+<aside class="updates-panel" id="updatesPanel" role="dialog" aria-modal="true" aria-label="Updates">
+  <div class="updates-panel-top">
+    <strong>Updates</strong>
+    <button class="close" id="updatesClose" aria-label="Close">×</button>
+  </div>
+  <div class="update-entry">
+    <div class="update-meta">Tidy Team · 5th September 2026</div>
+    <p>Tidy is settling in for September.</p>
+    <p>We're keeping this version focused while we continue testing and polishing the experience.</p>
+    <p>Throughout October, we'll gradually introduce quality-of-life improvements, starting with presets that make choosing how Tidy handles your files easier.</p>
+    <p>More improvements will follow during the month, with each update tested carefully before release.</p>
+  </div>
+  <div class="updates-note">Plans and updates can change.</div>
+</aside>
+
+<script src="/assets/log/terminal.js"></script>
+<script src="/assets/app.js"></script>
+</body>
+</html>
