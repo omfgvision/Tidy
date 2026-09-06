@@ -1,5 +1,3 @@
-# Tidy
-
 Tidy is a small, local-first file compressor and converter made to keep everyday file tasks simple.
 
 ## What Tidy does
