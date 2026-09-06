@@ -1,35 +1,26 @@
-Tidy is a small, local-first file compressor and converter made to keep everyday file tasks simple.
+# Tidy 🧹
 
-## What Tidy does
+**Tidy makes files tidy.**
+
+A small, local-first file compressor and converter built to keep file tools simple, private, and free.
+
+### What Tidy does
 
 * Compress supported files
 * Convert supported files
-* Preview results before downloading
-* Process supported files locally in the browser whenever possible
+* Process files locally whenever possible
+* More features coming throughout October
 
-## Why Tidy?
+### Why AI?
 
-Tidy was built with AI-assisted development to help keep it free and make the project possible without the cost of hiring developers.
+Tidy was built with AI-assisted development to help bring the project to life without the cost of hiring developers.
 
-AI helped us get Tidy off the ground, but the project is still tested, reviewed, and maintained by the Tidy Team.
+I'm learning to code and working towards developing Tidy myself. For now, AI helps me turn my ideas into a real project while I learn.
 
-## What's coming
-
-More quality-of-life improvements are planned throughout **October**, including:
-
-* Presets for easier file processing
-* Improved processing options
-* Metadata controls
-* More improvements based on testing
-
-Plans and updates can change as Tidy continues to grow.
-
-## Website
+### Website
 
 [**Tidy**](https://tidy.cold.monster/)
 
-## License
+### License
 
-Tidy is available under the **PolyForm Strict License 1.0.0**.
-
-See [`LICENSE`](./LICENSE).
+PolyForm Strict License 1.0.0
