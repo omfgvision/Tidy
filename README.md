@@ -8,7 +8,7 @@ A small, local-first file compressor and converter built to keep file tools simp
 
 * Compress supported files
 * Convert supported files
-* Process files locally whenever possible
+* Process files locally
 * More features coming throughout October
 
 ### Why AI?
